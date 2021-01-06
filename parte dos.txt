@@ -1,0 +1,23 @@
+t=[0:0.01:0.98]
+yi = sin(2*pi*4*t)
+
+#Graficar
+plot(eje_x,eje_y,'color')
+hold on % Permite realizar varias graficas sobre la misma ventana
+
+xlabel('time')
+ylabel('value')
+legend('sin', 'cos')
+title('usar')
+
+print -dpng 'mi_imagen.png'
+
+close %Cierra el hold on la ventana
+
+figure('name') %Crea ventanas independientes
+
+subplot(1,2,1) %divide el grafico en una parrillad de 1*2 accede ala primera
+
+axis([0.5 1 -1 1]) %Agrega el rango del grafico
+
+clf % para eliminar
