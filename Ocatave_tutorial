@@ -1,0 +1,114 @@
+PS1('>> ') % change the promp
+disp()  % print by console
+pi % constants numeric
+sprintf('some text and decimals, %0.2f', var) %Format the output    
+format long
+format short
+
+
+#Create matrices
+A = [1 2; 3 4; 5 6]
+v = [1 2 3]
+v = 1:0.1:2 % creat matrix from 1 to 2 in step the lenght 0,1
+v = 1:6 % create vector from 1 to 6
+ones(m,n) % create matrix initialite with ones
+zeros(m,n) % create matrix initialite with zeros
+eye(m,n) % create the matriz identity   
+rand(m,n) % matriz ramdon distributed beetwen zero and one
+randn(m,n) %distribucion gaussiana
+hist(vectro) %Grafico de distribucion
+help function % documentation
+size(a)
+size(a,1),size(a,2) first and second dimension
+length
+
+#Load data
+pwd
+load featuresX.dat % load data 
+who %show the var in the work station
+whos % same tha who with the diference the whos is more sṕecific
+clear % eliminate all var 
+var(1:5) %get by range
+
+save hello.mat var% permite almacenar variables     
+save hello.txt v -ascii
+
+#Acces to the matrix A
+
+A(3,2) % specif pocition
+A(3,:) % all row
+A(:2) % all column
+A([1 3],:) %specific row and all columns
+
+Asignar valores
+
+A(:,2) = [10; 11; 12]
+
+Agregar clumna
+A = [A, [100; 110; 120]]
+
+A(:) % all like vector
+
+C =[A B] adjuntar matrix like columna
+C = [A; B] adjuntara matrix like row
+
+
+
+
+Operaciones sobre matrices
+
+A * B % multiplicacion matricial
+
+A .* B % multiplicacion por posiciones  
+
+val = max(A)
+[val, ind] = max(A)
+
+[r,c] = find(A>=7) % filas y columnas de todos quellos maqyores que 7
+
+flidup % voltear al reves una matrix
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
