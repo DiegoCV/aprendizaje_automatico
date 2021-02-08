@@ -85,18 +85,42 @@ p2 = sum(sumsq(Theta2(:,2:end),1));
 J = (1/m) * sum(sum_k) + ((lambda/(2*m))*(p1+p2));
 
 
+%Parte 2
+D1 = zeros(size(Theta1)(1), size(Theta1)(2));
+D2 = zeros(size(Theta2)(1), size(Theta2)(2));
 
+y_t = y_t';
+sg = sigmoidGradient(z2);
 
+for i = 1:m
+  d3 = a3(:,i) - y_t(:,i);  
+  D2 = D2 + (d3 * a2(:,i)');
+  d2 = (Theta2' * d3) .* a2(:,i) .* (1 - a2(:,i));
+  D1 = D1 + (d2(2:end) * a1(i,:));
+end
 
+coef1 = 1/m;
+coef2 = lambda/m;
 
+for i = 1:size(D1)(1)
+  for j = 1:size(D1)(2)
+    if j == 1
+      Theta1_grad(i,j) = D1(i, j) * coef1;
+    else
+      Theta1_grad(i,j) = (D1(i, j) * coef1) + (coef2 * Theta1(i, j));
+    endif
+  end
+end
 
-
-
-
-
-
-
-
+for(i = 1:size(D2)(1))
+  for(j = 1:size(D2)(2))
+    if j == 1
+      Theta2_grad(i, j) = D2(i, j) * coef1;
+    else
+      Theta2_grad(i, j) = (D2(i, j) * coef1) + (coef2 * Theta2(i, j));
+    endif
+  end
+end
 
 % -------------------------------------------------------------
 
@@ -107,3 +131,4 @@ grad = [Theta1_grad(:) ; Theta2_grad(:)];
 
 
 end
+
